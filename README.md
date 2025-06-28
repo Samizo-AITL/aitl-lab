@@ -1,54 +1,85 @@
-## aitl-lab
+# AITL-Lab: AITL制御PoCリポジトリ
 
-## プロジェクト概要
+AITL-Lab は、AITL（All-in-Theory Logic）理論に基づく**制御PoC**および**AIアーキテクチャ開発**のための統合リポジトリです。
 
-本プロジェクト「aitl-lab」は、SoC制御系のPoC設計におけるAll-in-Theory Logic (AITL) 対応マニュアルおよび関連資産の体系的管理を目的としています。  
-AITL理論を基盤に、制御系設計、RTL/ソフト連携、評価、SystemDK移行までの一連の設計プロセスを包括的に扱います。
+- 🧠 **AITL理論**：推論・制御・物理制約を統合的に捉えるAI設計思想  
+- 🛠 **本リポジトリ**：理論に基づいたソフト・ハード一体の実装／評価環境  
+- 🎓 **対象**：AI・制御・ロボティクス・半導体・組込み分野の研究者、教育者、技術者
 
-## ディレクトリ構成
+---
+
+## 📂 ディレクトリ構成（概要）
+
 ```
 aitl-lab/
-├── docs/                              # マニュアル・設計資料（Markdown形式）
-│   ├── SoC_PoC_Manual_v5.0.md        # PoCマニュアル（中核ドキュメント）
-│   ├── aitl-theory/                   # AITL理論関連ドキュメント
-│   │    ├── overview.md               # AITL理論の概要説明
-│   │    ├── concepts.md               # 主要概念・用語解説
-│   │    └── examples.md               # 理論の具体例・ケーススタディ
-│   ├── tutorial/                      # 教育・チュートリアル資料
-│   │    ├── getting_started.md        # 入門ガイド
-│   │    ├── poc_workflow.md           # PoC開発手順・実践例
-│   │    └── tools_usage.md            # ツールの使い方
-│   ├── references/                    # 参考資料、関連論文等
-│   └── architecture/                  # AITL構造記述、SystemDK構成ファイル
-├── src/                              # 実装コード・PoC
-│   ├── rtl/                          # ハードウェア設計（Verilog/SystemVerilog）
-│   └── sw/                           # ソフト制御コード（RISC-V等）
-├── templates/                        # 設計テンプレート・フォーマット類
-├── eval/                            # 評価データ・ログ
-└── README.md
+├── docs/                 # マニュアル・設計資料（Markdown形式）
+│   ├── SoC_PoC_Manual_v5.0.md       # 中核マニュアル
+│   ├── aitl-theory/                 # 理論ドキュメント（概念・例・概要）
+│   ├── tutorial/                    # 入門・チュートリアル
+│   ├── references/                  # 関連文献・資料
+│   └── architecture/                # AITL構造・SystemDK
+├── src/                  # 実装コード一式（PoC）
+│   ├── rtl/              # RTL設計（Verilog等）
+│   └── sw/               # ソフトウェア制御（RISC-Vなど）
+├── templates/            # 設計テンプレート・書式類
+├── eval/                 # 評価結果・ログ・グラフ
+└── README.md             # 本ファイル
 ```
 
-## 進行ルール
+---
 
-- 章ごとにMarkdownファイルへ追記し、バージョン管理を徹底  
-- ソースコードは機能単位で分割し、`src/rtl/` と `src/sw/` で管理  
-- ドキュメントは `docs/` 以下に一元化し、テンプレート利用を推奨  
-- SystemDK移行対応は `docs/architecture/` および `src/ip/` を参照  
-- 評価は `eval/` に記録し、定期的に結果共有とレビューを実施
+## 🚀 クイックスタート（PoC実行）
 
-## 貢献方法
+PoC動作確認用の簡易実行手順：
 
-- 新規機能追加や修正は、ブランチを切ってPull Requestで提案してください  
-- ドキュメント修正は内容の正確性と表現の明瞭性を重視  
-- コード修正は動作確認と簡易テストの実施を必須とします
+```bash
+cd src/sw/poc
+pip install -r requirements.txt
+python main.py
+```
 
-## 連絡先
+詳細は `docs/tutorial/getting_started.md` および `docs/SoC_PoC_Manual_v5.0.md` を参照。
 
-- プロジェクト管理者: 三溝 真一  
-- GitHubリポジトリ: https://github.com/aitl-lab  
-- 問い合わせ: issue登録またはメールでご連絡ください
+---
 
-## ライセンス
+## 📖 ドキュメント案内
 
-本プロジェクトのソースコードおよびドキュメントはMITライセンスのもと公開しています。  
-詳細はLICENSEファイルを参照してください。
+| 種別 | 内容 |
+|------|------|
+| 📘 [SoC_PoC_Manual_v5.0.md](./docs/SoC_PoC_Manual_v5.0.md) | 制御PoCの中核マニュアル |
+| 🧠 [aitl-theory/](./docs/aitl-theory/) | 理論概要・概念・ケーススタディ |
+| 🎓 [tutorial/](./docs/tutorial/) | 入門・開発手順・ツール使い方 |
+| 📚 [references/](./docs/references/) | 関連論文・参考資料 |
+| 🏗 [architecture/](./docs/architecture/) | AITL構造・SystemDK定義など |
+
+---
+
+## 📌 AITLとは？
+
+AITL（All-in-Theory Logic）は、**知能制御システムを理論的・構造的に設計**することを目的としたAIアーキテクチャ構想です。  
+特徴：
+
+- 制御・推論・物理情報を一体で扱う構造
+- ソフト＋ハードの両面を想定（SystemDK/SoCレベルまで）
+
+---
+
+## 🧪 ライセンス・利用
+
+- ライセンス：MIT（コード・ドキュメントとも）  
+- 個人・教育・研究用途での利用を歓迎します  
+- 再利用の際は出典明記をお願いします
+
+---
+
+## 🙋‍♂️ 貢献・連絡先
+
+- バグ報告・改善提案は GitHub Issues へ  
+- 技術的なディスカッションは Discussions または別リポジトリへ
+
+---
+
+## 🔗 関連リポジトリ
+
+- [`theory`](https://github.com/Samizo-AITL/theory)：AITL理論の抽象化・設計言語モデル
+- [`edusemi`](https://github.com/Samizo-AITL/edusemi)：半導体・制御系基礎教材
