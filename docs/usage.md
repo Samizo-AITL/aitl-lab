@@ -104,4 +104,10 @@ PoCの実行後、以下のような成果物が生成されます。
 
 - [overview.md](./overview.md)：このPoCの目的や構成  
 - [dev_guide.md](./dev_guide.md)：内部構造と開発ルールの詳細  
-- [SoC_PoC_Manual_v5.0.md](./SoC_PoC_Manual_v5.0.md)：PoCの中核理論マニュアル
+
+
+## 📘 中核マニュアル
+
+本PoCの理論的背景と制御アルゴリズムの詳細は、以下をご覧ください：
+
+- [SoC_PoC_Manual_v5.0.md](./SoC_PoC_Manual_v5.0.md)
