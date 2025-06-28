@@ -37,4 +37,11 @@ AITLでは、知能システムを論理的かつ構造的に組み立て、現�
 
 - [`usage.md`](./usage.md)：このPoCの動かし方
 - [`dev_guide.md`](./dev_guide.md)：開発者向けの構造説明
-- [`SoC_PoC_Manual_v5.0.md`](./SoC_PoC_Manual_v5.0.md)：制御PoCの中核マニュアル
+
+---
+
+## 📘 中核マニュアル
+
+本PoCの理論的背景と制御アルゴリズムの詳細は、以下をご覧ください：
+
+- [SoC_PoC_Manual_v5.0.md](./SoC_PoC_Manual_v5.0.md)
